@@ -20,6 +20,8 @@ website:
       - href: applications.qmd
         text: "Applications"
     right:
+      - text: "Sustainability Lab"
+        href: "https://sustainability-lab.github.io/"
       - icon: github
         href: "https://github.com/rishabh-mondal/NeurIPS_2025"
       - text: "Download"
