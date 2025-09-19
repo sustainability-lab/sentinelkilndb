@@ -20,6 +20,7 @@ A Large-Scale Dataset and Benchmark for OBB Brick Kiln Detection in South Asia U
 ::: {.btn-group}
 [Download Dataset](https://kaggle.com/datasets/3eb8e7201b14b158ed841718cb777c5b94a6a6375aaa8499c7376ec831f8d879){.btn}
 [View Code](https://github.com/rishabh-mondal/NeurIPS_2025){.btn}
+[Sustainability Lab](https://sustainability-lab.github.io/){.btn}
 :::
 :::
 :::
@@ -172,7 +173,7 @@ IIT Gandhinagar
 Nipun Batra¹
 :::
 ::: {.author-affiliation}
-IIT Gandhinagar
+IIT Gandhinagar, [Sustainability Lab](https://sustainability-lab.github.io/)
 :::
 :::
 :::

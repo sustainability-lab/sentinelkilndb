@@ -8,6 +8,8 @@ title: "Applications"
 
 SentinelKilnDB enables a wide range of applications across environmental science, policy making, and machine learning research. The oriented bounding box annotations provide precise spatial information critical for downstream analysis.
 
+**Interested in joining our research?** Visit the [Sustainability Lab](https://sustainability-lab.github.io/) to explore current research opportunities, open positions, and ongoing projects in environmental AI and computational sustainability.
+
 ## Environmental Monitoring
 
 ### Air Quality Assessment
