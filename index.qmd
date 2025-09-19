@@ -1,0 +1,192 @@
+---
+title: ""
+format: 
+  html:
+    page-layout: full
+---
+
+::: {.hero}
+::: {.container}
+# SentinelKilnDB
+
+::: {.subtitle}
+A Large-Scale Dataset and Benchmark for OBB Brick Kiln Detection in South Asia Using Satellite Imagery
+:::
+
+::: {.badges}
+[NeurIPS 2025]{.badge} [Satellite Imagery]{.badge} [Object Detection]{.badge} [Environmental Monitoring]{.badge}
+:::
+
+::: {.btn-group}
+[Download Dataset](https://kaggle.com/datasets/3eb8e7201b14b158ed841718cb777c5b94a6a6375aaa8499c7376ec831f8d879){.btn}
+[View Code](https://github.com/rishabh-mondal/NeurIPS_2025){.btn}
+:::
+:::
+:::
+
+::: {.stats}
+::: {.stat-grid}
+::: {.stat-item}
+[62,671]{.stat-number}
+[Brick Kilns]{.stat-label}
+:::
+
+::: {.stat-item}
+[2.8M]{.stat-number}
+[km² Coverage]{.stat-label}
+:::
+
+::: {.stat-item}
+[4]{.stat-number}
+[Countries]{.stat-label}
+:::
+
+::: {.stat-item}
+[3]{.stat-number}
+[Kiln Types]{.stat-label}
+:::
+:::
+:::
+
+::: {.container}
+
+## Overview
+
+Air pollution was responsible for **2.6 million deaths** across South Asia in 2021 alone, with brick manufacturing contributing significantly to this burden. The Indo-Gangetic Plain sees brick kilns contributing **8-14%** of ambient air pollution.
+
+SentinelKilnDB addresses the critical need for automated brick kiln detection by providing the first publicly available, hand-validated benchmark of **62,671 brick kilns** with **oriented bounding boxes (OBBs)** across three kiln types using free **Sentinel-2 imagery**.
+
+::: {.figure}
+![Geographic coverage of SentinelKilnDB across South Asia](figures/regions_covered.png)
+:::
+
+## Dataset Statistics
+
+::: {.table-container}
+| Country | CFCBK | FCBK | Zigzag | Total | Coverage |
+|---------|-------|------|--------|-------|----------|
+| **India** | 1,939 | 21,451 | 19,592 | **42,982** | 9 states |
+| **Bangladesh** | 2 | 1,461 | 5,440 | **6,903** | 8 divisions |
+| **Pakistan** | 3 | 10,443 | 1,731 | **12,177** | 4 provinces |
+| **Afghanistan** | 0 | 608 | 1 | **609** | 34 provinces |
+| **Total** | **1,944** | **33,963** | **26,764** | **62,671** | 2.8M km² |
+:::
+
+## Kiln Types
+
+::: {.grid .grid-3}
+::: {.card}
+![CFCBK Kilns](figures/CFCBK_kilns.png){style="width: 100%; height: 200px; object-fit: cover; border-radius: 8px;"}
+
+### CFCBK Kilns
+Circular Fixed Chimney Bull's Trench Kilns - oldest design, fuel-intensive, high emissions
+:::
+
+::: {.card}
+![FCBK Kilns](figures/FCBK_kilns.png){style="width: 100%; height: 200px; object-fit: cover; border-radius: 8px;"}
+
+### FCBK Kilns
+Fixed Chimney Bull's Trench Kilns - most prevalent (70-75%), newer design, more efficient
+:::
+
+::: {.card}
+![Zigzag Kilns](figures/Zigzag_kilns.png){style="width: 100%; height: 200px; object-fit: cover; border-radius: 8px;"}
+
+### Zigzag Kilns
+Most efficient design with 40% fuel savings compared to FCBK kilns (20-25% of total)
+:::
+:::
+
+## Abstract
+
+::: {.abstract}
+Air pollution was responsible for 2.6 million deaths across South Asia in 2021 alone, with brick manufacturing contributing significantly to this burden. In particular, the Indo-Gangetic Plain; a densely populated and highly polluted region spanning northern India, Pakistan, Bangladesh, and parts of Afghanistan sees brick kilns contributing 8-14% of ambient air pollution.
+
+Traditional monitoring approaches, such as field surveys and manual annotation using tools like Google Earth Pro, are time and labor-intensive. Prior ML-based efforts for automated detection have relied on costly high-resolution commercial imagery and non-public datasets, limiting reproducibility and scalability.
+
+In this work, we introduce **SentinelKilnDB**, a publicly available, hand-validated benchmark of **62,671 brick kilns** spanning **three kiln types** Fixed Chimney Bull's Trench Kiln (FCBK), Circular FCBK (CFCBK), and Zigzag kilns—annotated with **oriented bounding boxes (OBBs)** across **2.8 million km²** using free and globally accessible **Sentinel-2 imagery**.
+
+We benchmark state-of-the-art oriented object detection models and evaluate generalization across *in-region*, *out-of-region*, and *super-resolution* settings. SentinelKilnDB enables rigorous evaluation of geospatial generalization and robustness for low-resolution object detection, and provides a new testbed for ML models addressing real-world environmental and remote sensing challenges at a continental scale.
+:::
+
+## Authors
+
+::: {.authors}
+::: {.author-grid}
+::: {.author}
+::: {.author-name}
+Rishabh Mondal¹
+:::
+::: {.author-affiliation}
+IIT Gandhinagar
+:::
+:::
+
+::: {.author}
+::: {.author-name}
+Jeet Parab²
+:::
+::: {.author-affiliation}
+IIIT Surat
+:::
+:::
+
+::: {.author}
+::: {.author-name}
+Heer Kubadia¹
+:::
+::: {.author-affiliation}
+IIT Gandhinagar
+:::
+:::
+
+::: {.author}
+::: {.author-name}
+Shataxi Dubey¹
+:::
+::: {.author-affiliation}
+IIT Gandhinagar
+:::
+:::
+
+::: {.author}
+::: {.author-name}
+Shardul Junagade¹
+:::
+::: {.author-affiliation}
+IIT Gandhinagar
+:::
+:::
+
+::: {.author}
+::: {.author-name}
+Zeel B Patel¹
+:::
+::: {.author-affiliation}
+IIT Gandhinagar
+:::
+:::
+
+::: {.author}
+::: {.author-name}
+Nipun Batra¹
+:::
+::: {.author-affiliation}
+IIT Gandhinagar
+:::
+:::
+:::
+:::
+
+## Citation
+
+```bibtex
+@article{mondal2025sentinelkilndb,
+  title={SentinelKilnDB: A Large-Scale Dataset and Benchmark for OBB Brick Kiln Detection in South Asia Using Satellite Imagery},
+  author={Mondal, Rishabh and Parab, Jeet and Kubadia, Heer and Dubey, Shataxi and Junagade, Shardul and Patel, Zeel B and Batra, Nipun},
+  journal={Advances in Neural Information Processing Systems},
+  year={2025}
+}
+```
+
+:::

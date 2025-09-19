@@ -1,0 +1,268 @@
+[
+  {
+    "objectID": "benchmark.html",
+    "href": "benchmark.html",
+    "title": "Benchmark Results",
+    "section": "",
+    "text": "We evaluated 28 state-of-the-art object detection models across four challenging evaluation scenarios to assess the utility of SentinelKilnDB for real-world deployment.\n\n\n\n\n\nStandard evaluation where models are tested on regions included in the training distribution.\n\n\n\nGeographic domain adaptation test where models trained on one region are evaluated on geographically distant regions.\n\n\n\nLeave-one-season-out (LOSO) evaluation using data from Winter (W), Pre-Monsoon (PM), Monsoon (M), and Post-Monsoon (PoM).\n\n\n\nEvaluation of detection performance on enhanced-resolution imagery using various super-resolution techniques.\n\n\n\n\n\n\n\n\n\nComparison of class-agnostic mAP 50 for different object detection methods\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nRank\nCategory\nMethod\nPublication\nBackbone\nBBox\nCA mAP₅₀\nCFCBK\nFCBK\nZigzag\n\n\n\n\n1\nOne-stage\nYOLOv11L-OBB\n2024\nYOLOv11\nOBB\n84.94\n79.87\n65.95\n59.83\n\n\n2\nTransformer\nRT-DETR\nICLR-24\nResNet50\nAA\n84.71\n69.97\n62.81\n47.77\n\n\n3\nOne-stage\nYOLOv8L-WORLDv2\n2024\nYOLOv8\nAA\n83.11\n66.75\n62.85\n50.52\n\n\n4\nTwo-stage\nRoI Transformer\nCVPR-19\nSwin-T\nOBB\n70.74\n40.45\n51.84\n55.23\n\n\n5\nOne-stage\nYOLOv9E-OBB\n2024\nYOLOv9\nOBB\n67.03\n30.27\n48.55\n52.27\n\n\n6\nFoundation\nCopernicusFM\n2024\nViT-B\nAA\n62.48\n35.62\n45.83\n48.99\n\n\n7\nOne-stage\nYOLOv8L-OBB\n2023\nYOLOv8\nOBB\n60.15\n32.11\n42.98\n45.36\n\n\n8\nFoundation\nSatMAE\nNeurIPS-22\nViT-B\nAA\n58.77\n28.94\n41.22\n44.15\n\n\n9\nOne-stage\nConvNeXt\nCVPR-22\nConvNeXt\nAA\n51.01\n8.79\n37.00\n16.88\n\n\n10\nTwo-stage\nH2RBox\nICLR-23\nResNet50\nOBB\n45.91\n23.81\n28.85\n30.81\n\n\n\n\n\n\n\n\n\n\nCross-region performance showing significant domain shift challenges\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nModel\nUttar Pradesh\nDhaka\nPunjab\nLOCO (I+B+P→A)\nSeasonal (W→PM)\n\n\n\n\nYOLOv8L-WORLDv2\n83.11\n59.64\n68.84\n46.34\n55.56\n\n\nYOLOv11L-OBB\n79.49\n51.49\n67.81\n75.02\n60.21\n\n\nRT-DETR\n84.71\n61.50\n75.58\n49.89\n58.43\n\n\nConvNeXt\n51.01\n7.07\n16.73\n35.22\n42.15\n\n\nRoI Transformer\n63.83\n13.68\n27.24\n41.67\n48.91\n\n\n\n\nKey Findings: - Significant performance drop when transferring across regions (15-25% mAP decrease) - YOLOv11L-OBB maintains best overall cross-region performance - Geographic domain shift presents major challenge for deployment\n\n\n\n\n\n\nPerformance improvements with different super-resolution methods\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nMethod\nResolution\nCA mAP₅₀\nCFCBK\nFCBK\nZigzag\nPSNR\nSSIM\n\n\n\n\nOriginal\n128×128\n65.02\n0.00\n0.00\n63.18\n-\n-\n\n\nBilinear\n512×512\n87.64\n22.77\n34.00\n86.11\n-\n-\n\n\nStable Diffusion\n512×512\n83.46\n38.50\n27.04\n79.60\n26.71\n0.6785\n\n\nSwinIR\n512×512\n89.52\n37.01\n48.11\n86.54\n27.14\n0.7780\n\n\nESRGAN\n512×512\n90.12\n47.43\n42.89\n87.35\n27.16\n0.5678\n\n\nHiT-SR\n512×512\n90.74\n53.79\n53.88\n88.28\n34.44\n0.9168\n\n\n\n\nResults: - Super-resolution provides substantial improvements (25+ mAP points) - HiT-SR achieves best detection performance with highest image quality - Even simple bilinear interpolation provides significant gains\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nDataset\nImagery\nClasses\nImages\nInstances\nGSD\nPublic\n\n\n\n\nVEDAI\nAerial\n9\n1,210\n3,640\n0.125m\n✅\n\n\nHRSC2016\nGoogle Earth\n25\n1,070\n2,976\n0.4-2m\n✅\n\n\nDOTA-V1.0\nGoogle Earth\n15\n2,806\n188,282\n0.1-4.5m\n✅\n\n\nDIOR-R\nGoogle Earth\n20\n23,463\n192,518\n0.5-1m\n✅\n\n\nSentinelKilnDB\nSentinel-2\n3\n78,694\n105,933\n10m\n✅\n\n\n\n\n\n\n\n\n\n\nSmall Object Size: Kilns span ~30 pixels in 10m resolution imagery\nLow Contrast: Similar appearance to surrounding terrain\n\nGeometric Variation: Different kiln orientations and shapes\nSeasonal Changes: Appearance varies across seasons\n\n\n\n\n\nFoundation Models: Show promise but need specialized training for satellite imagery\nOBB vs AA: Oriented bounding boxes provide better spatial accuracy for irregular shapes\nMulti-Scale Features: Essential for detecting small objects in low-resolution imagery\nData Augmentation: Critical for robust cross-region performance\n\n\n\n\n\nBatch Size: 16 (optimized for GPU memory)\nLearning Rate: 1e-4 with cosine scheduling\nEpochs: 100 with early stopping\nAugmentation: Mosaic, mixup, rotation, scaling\nHardware: NVIDIA A100 GPUs\n\n\n\n\n\nAll benchmarking code, trained models, and evaluation scripts are publicly available:\n\nBenchmark Code Pretrained Models"
+  },
+  {
+    "objectID": "benchmark.html#benchmarking-overview",
+    "href": "benchmark.html#benchmarking-overview",
+    "title": "Benchmark Results",
+    "section": "",
+    "text": "We evaluated 28 state-of-the-art object detection models across four challenging evaluation scenarios to assess the utility of SentinelKilnDB for real-world deployment."
+  },
+  {
+    "objectID": "benchmark.html#evaluation-tasks",
+    "href": "benchmark.html#evaluation-tasks",
+    "title": "Benchmark Results",
+    "section": "",
+    "text": "Standard evaluation where models are tested on regions included in the training distribution.\n\n\n\nGeographic domain adaptation test where models trained on one region are evaluated on geographically distant regions.\n\n\n\nLeave-one-season-out (LOSO) evaluation using data from Winter (W), Pre-Monsoon (PM), Monsoon (M), and Post-Monsoon (PoM).\n\n\n\nEvaluation of detection performance on enhanced-resolution imagery using various super-resolution techniques."
+  },
+  {
+    "objectID": "benchmark.html#key-results",
+    "href": "benchmark.html#key-results",
+    "title": "Benchmark Results",
+    "section": "",
+    "text": "Comparison of class-agnostic mAP 50 for different object detection methods\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nRank\nCategory\nMethod\nPublication\nBackbone\nBBox\nCA mAP₅₀\nCFCBK\nFCBK\nZigzag\n\n\n\n\n1\nOne-stage\nYOLOv11L-OBB\n2024\nYOLOv11\nOBB\n84.94\n79.87\n65.95\n59.83\n\n\n2\nTransformer\nRT-DETR\nICLR-24\nResNet50\nAA\n84.71\n69.97\n62.81\n47.77\n\n\n3\nOne-stage\nYOLOv8L-WORLDv2\n2024\nYOLOv8\nAA\n83.11\n66.75\n62.85\n50.52\n\n\n4\nTwo-stage\nRoI Transformer\nCVPR-19\nSwin-T\nOBB\n70.74\n40.45\n51.84\n55.23\n\n\n5\nOne-stage\nYOLOv9E-OBB\n2024\nYOLOv9\nOBB\n67.03\n30.27\n48.55\n52.27\n\n\n6\nFoundation\nCopernicusFM\n2024\nViT-B\nAA\n62.48\n35.62\n45.83\n48.99\n\n\n7\nOne-stage\nYOLOv8L-OBB\n2023\nYOLOv8\nOBB\n60.15\n32.11\n42.98\n45.36\n\n\n8\nFoundation\nSatMAE\nNeurIPS-22\nViT-B\nAA\n58.77\n28.94\n41.22\n44.15\n\n\n9\nOne-stage\nConvNeXt\nCVPR-22\nConvNeXt\nAA\n51.01\n8.79\n37.00\n16.88\n\n\n10\nTwo-stage\nH2RBox\nICLR-23\nResNet50\nOBB\n45.91\n23.81\n28.85\n30.81\n\n\n\n\n\n\n\n\n\n\nCross-region performance showing significant domain shift challenges\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nModel\nUttar Pradesh\nDhaka\nPunjab\nLOCO (I+B+P→A)\nSeasonal (W→PM)\n\n\n\n\nYOLOv8L-WORLDv2\n83.11\n59.64\n68.84\n46.34\n55.56\n\n\nYOLOv11L-OBB\n79.49\n51.49\n67.81\n75.02\n60.21\n\n\nRT-DETR\n84.71\n61.50\n75.58\n49.89\n58.43\n\n\nConvNeXt\n51.01\n7.07\n16.73\n35.22\n42.15\n\n\nRoI Transformer\n63.83\n13.68\n27.24\n41.67\n48.91\n\n\n\n\nKey Findings: - Significant performance drop when transferring across regions (15-25% mAP decrease) - YOLOv11L-OBB maintains best overall cross-region performance - Geographic domain shift presents major challenge for deployment\n\n\n\n\n\n\nPerformance improvements with different super-resolution methods\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nMethod\nResolution\nCA mAP₅₀\nCFCBK\nFCBK\nZigzag\nPSNR\nSSIM\n\n\n\n\nOriginal\n128×128\n65.02\n0.00\n0.00\n63.18\n-\n-\n\n\nBilinear\n512×512\n87.64\n22.77\n34.00\n86.11\n-\n-\n\n\nStable Diffusion\n512×512\n83.46\n38.50\n27.04\n79.60\n26.71\n0.6785\n\n\nSwinIR\n512×512\n89.52\n37.01\n48.11\n86.54\n27.14\n0.7780\n\n\nESRGAN\n512×512\n90.12\n47.43\n42.89\n87.35\n27.16\n0.5678\n\n\nHiT-SR\n512×512\n90.74\n53.79\n53.88\n88.28\n34.44\n0.9168\n\n\n\n\nResults: - Super-resolution provides substantial improvements (25+ mAP points) - HiT-SR achieves best detection performance with highest image quality - Even simple bilinear interpolation provides significant gains"
+  },
+  {
+    "objectID": "benchmark.html#dataset-comparison",
+    "href": "benchmark.html#dataset-comparison",
+    "title": "Benchmark Results",
+    "section": "",
+    "text": "Dataset\nImagery\nClasses\nImages\nInstances\nGSD\nPublic\n\n\n\n\nVEDAI\nAerial\n9\n1,210\n3,640\n0.125m\n✅\n\n\nHRSC2016\nGoogle Earth\n25\n1,070\n2,976\n0.4-2m\n✅\n\n\nDOTA-V1.0\nGoogle Earth\n15\n2,806\n188,282\n0.1-4.5m\n✅\n\n\nDIOR-R\nGoogle Earth\n20\n23,463\n192,518\n0.5-1m\n✅\n\n\nSentinelKilnDB\nSentinel-2\n3\n78,694\n105,933\n10m\n✅"
+  },
+  {
+    "objectID": "benchmark.html#performance-analysis",
+    "href": "benchmark.html#performance-analysis",
+    "title": "Benchmark Results",
+    "section": "",
+    "text": "Small Object Size: Kilns span ~30 pixels in 10m resolution imagery\nLow Contrast: Similar appearance to surrounding terrain\n\nGeometric Variation: Different kiln orientations and shapes\nSeasonal Changes: Appearance varies across seasons\n\n\n\n\n\nFoundation Models: Show promise but need specialized training for satellite imagery\nOBB vs AA: Oriented bounding boxes provide better spatial accuracy for irregular shapes\nMulti-Scale Features: Essential for detecting small objects in low-resolution imagery\nData Augmentation: Critical for robust cross-region performance\n\n\n\n\n\nBatch Size: 16 (optimized for GPU memory)\nLearning Rate: 1e-4 with cosine scheduling\nEpochs: 100 with early stopping\nAugmentation: Mosaic, mixup, rotation, scaling\nHardware: NVIDIA A100 GPUs"
+  },
+  {
+    "objectID": "benchmark.html#code-and-models",
+    "href": "benchmark.html#code-and-models",
+    "title": "Benchmark Results",
+    "section": "",
+    "text": "All benchmarking code, trained models, and evaluation scripts are publicly available:\n\nBenchmark Code Pretrained Models"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "SentinelKilnDB",
+    "section": "",
+    "text": "A Large-Scale Dataset and Benchmark for OBB Brick Kiln Detection in South Asia Using Satellite Imagery\n\n\nNeurIPS 2025 Satellite Imagery Object Detection Environmental Monitoring\n\n\nDownload Dataset View Code"
+  },
+  {
+    "objectID": "index.html#overview",
+    "href": "index.html#overview",
+    "title": "SentinelKilnDB",
+    "section": "Overview",
+    "text": "Overview\nAir pollution was responsible for 2.6 million deaths across South Asia in 2021 alone, with brick manufacturing contributing significantly to this burden. The Indo-Gangetic Plain sees brick kilns contributing 8-14% of ambient air pollution.\nSentinelKilnDB addresses the critical need for automated brick kiln detection by providing the first publicly available, hand-validated benchmark of 62,671 brick kilns with oriented bounding boxes (OBBs) across three kiln types using free Sentinel-2 imagery.\n\n\n\n\nGeographic coverage of SentinelKilnDB across South Asia"
+  },
+  {
+    "objectID": "index.html#dataset-statistics",
+    "href": "index.html#dataset-statistics",
+    "title": "SentinelKilnDB",
+    "section": "Dataset Statistics",
+    "text": "Dataset Statistics\n\n\n\n\n\n\n\n\n\n\n\n\nCountry\nCFCBK\nFCBK\nZigzag\nTotal\nCoverage\n\n\n\n\nIndia\n1,939\n21,451\n19,592\n42,982\n9 states\n\n\nBangladesh\n2\n1,461\n5,440\n6,903\n8 divisions\n\n\nPakistan\n3\n10,443\n1,731\n12,177\n4 provinces\n\n\nAfghanistan\n0\n608\n1\n609\n34 provinces\n\n\nTotal\n1,944\n33,963\n26,764\n62,671\n2.8M km²"
+  },
+  {
+    "objectID": "index.html#kiln-types",
+    "href": "index.html#kiln-types",
+    "title": "SentinelKilnDB",
+    "section": "Kiln Types",
+    "text": "Kiln Types\n\n\n\n\n\nCFCBK Kilns\n\n\n\nCFCBK Kilns\nCircular Fixed Chimney Bull’s Trench Kilns - oldest design, fuel-intensive, high emissions\n\n\n\n\n\n\nFCBK Kilns\n\n\n\nFCBK Kilns\nFixed Chimney Bull’s Trench Kilns - most prevalent (70-75%), newer design, more efficient\n\n\n\n\n\n\nZigzag Kilns\n\n\n\nZigzag Kilns\nMost efficient design with 40% fuel savings compared to FCBK kilns (20-25% of total)"
+  },
+  {
+    "objectID": "index.html#abstract",
+    "href": "index.html#abstract",
+    "title": "SentinelKilnDB",
+    "section": "Abstract",
+    "text": "Abstract\n\nAir pollution was responsible for 2.6 million deaths across South Asia in 2021 alone, with brick manufacturing contributing significantly to this burden. In particular, the Indo-Gangetic Plain; a densely populated and highly polluted region spanning northern India, Pakistan, Bangladesh, and parts of Afghanistan sees brick kilns contributing 8-14% of ambient air pollution.\nTraditional monitoring approaches, such as field surveys and manual annotation using tools like Google Earth Pro, are time and labor-intensive. Prior ML-based efforts for automated detection have relied on costly high-resolution commercial imagery and non-public datasets, limiting reproducibility and scalability.\nIn this work, we introduce SentinelKilnDB, a publicly available, hand-validated benchmark of 62,671 brick kilns spanning three kiln types Fixed Chimney Bull’s Trench Kiln (FCBK), Circular FCBK (CFCBK), and Zigzag kilns—annotated with oriented bounding boxes (OBBs) across 2.8 million km² using free and globally accessible Sentinel-2 imagery.\nWe benchmark state-of-the-art oriented object detection models and evaluate generalization across in-region, out-of-region, and super-resolution settings. SentinelKilnDB enables rigorous evaluation of geospatial generalization and robustness for low-resolution object detection, and provides a new testbed for ML models addressing real-world environmental and remote sensing challenges at a continental scale."
+  },
+  {
+    "objectID": "index.html#authors",
+    "href": "index.html#authors",
+    "title": "SentinelKilnDB",
+    "section": "Authors",
+    "text": "Authors\n\n\n\n\nRishabh Mondal¹\n\n\nIIT Gandhinagar\n\n\n\n\nJeet Parab²\n\n\nIIIT Surat\n\n\n\n\nHeer Kubadia¹\n\n\nIIT Gandhinagar\n\n\n\n\nShataxi Dubey¹\n\n\nIIT Gandhinagar\n\n\n\n\nShardul Junagade¹\n\n\nIIT Gandhinagar\n\n\n\n\nZeel B Patel¹\n\n\nIIT Gandhinagar\n\n\n\n\nNipun Batra¹\n\n\nIIT Gandhinagar"
+  },
+  {
+    "objectID": "index.html#citation",
+    "href": "index.html#citation",
+    "title": "SentinelKilnDB",
+    "section": "Citation",
+    "text": "Citation\n@article{mondal2025sentinelkilndb,\n  title={SentinelKilnDB: A Large-Scale Dataset and Benchmark for OBB Brick Kiln Detection in South Asia Using Satellite Imagery},\n  author={Mondal, Rishabh and Parab, Jeet and Kubadia, Heer and Dubey, Shataxi and Junagade, Shardul and Patel, Zeel B and Batra, Nipun},\n  journal={Advances in Neural Information Processing Systems},\n  year={2025}\n}"
+  },
+  {
+    "objectID": "dataset.html",
+    "href": "dataset.html",
+    "title": "Dataset",
+    "section": "",
+    "text": "SentinelKilnDB is a comprehensive dataset for brick kiln detection containing 62,671 manually validated brick kilns across South Asia. The dataset covers 2.8 million km² across India, Bangladesh, Pakistan, and Afghanistan using Sentinel-2 satellite imagery.\n\n\n\nDataset Coverage Map\n\n\n\n\n\n\n\n\n62,671 Total Kilns\n\n\n2.8M km² Coverage\n\n\n208 Hours Manual Validation\n\n\n10m Sentinel-2 Resolution\n\n\n\n\n\n\nOur iterative data collection process consisted of four main phases:\n\n\nStarted with 30,638 brick kilns from our previous work using Planet imagery across five Indian states covering 520K km².\n\n\n\nTrained YOLOv11L-OBB model on initial data and predicted kiln locations across extended regions.\n\n\n\nUsed custom hand-validation interface with ESRI Wayback imagery to verify all predictions.\n\n\n\nHand Validation Interface\n\n\n\n\n\nRepeated training-prediction-validation cycle four times to reach final dataset of 62,671 kilns.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCountry\nStates/Regions\nCFCBK\nFCBK\nZigzag\nTotal\nPercentage\n\n\n\n\nIndia\n9 states\n1,939\n21,451\n19,592\n42,982\n68.6%\n\n\nBangladesh\n8 divisions\n2\n1,461\n5,440\n6,903\n11.0%\n\n\nPakistan\n4 provinces\n3\n10,443\n1,731\n12,177\n19.4%\n\n\nAfghanistan\n34 provinces\n0\n608\n1\n609\n1.0%\n\n\nTotal\n-\n1,944\n33,963\n26,764\n62,671\n100%\n\n\n\n\n\n\n\n\n\n\nKiln Density Map\n\n\n\n\n\n\nFixed Chimney Bull’s Trench Kilns\nMost prevalent type (33,963 kilns)\nModerate efficiency\nFound across all countries\n\n\n\n\n\nNatural/Forced Draft Technology\n40% more fuel-efficient than FCBK\n26,764 kilns identified\nHigher adoption in India & Bangladesh\n\n\n\n\n\n\nCircular Fixed Chimney Bull’s Trench Kilns\nOldest design (1,944 kilns)\nHighest fuel consumption\nMostly found in India\n\n\n\n\n\n\n\n\n208 hours of expert manual validation\nMultiple imagery sources for verification\nTwo-stage review with expert adjudication\nNear-zero false positives ensured\n\n\n\n\n\nPrimary: Sentinel-2 (10m resolution, free access)\nValidation: Planet Labs, ESRI Wayback, Google Earth Pro\nTemporal: Multi-seasonal data coverage\nQuality Control: Consistent annotation guidelines\n\n\n\n\nOur district-level kiln counts in Uttar Pradesh show r = 0.94 correlation with official 2023 Uttar Pradesh Pollution Control Board survey data (19,671 kilns), confirming dataset completeness.\n\n\n\n\nThe dataset provides annotations in multiple formats for maximum compatibility:\n\n\n\n\n\n\n\n\n\nFormat\nDescription\nUse Case\n\n\n\n\nYOLO OBB\nOriented bounding boxes in YOLO format\nModern OBB detection models\n\n\nYOLO AA\nAxis-aligned bounding boxes in YOLO format\nTraditional object detection\n\n\nDOTA\nAnnotations compatible with DOTA benchmark\nResearch comparisons\n\n\n\n\n\n\n\nPrecise Area Estimation: Accurate kiln footprint calculation\nBetter Spatial Representation: Accounts for kiln orientation\n\nEmission Modeling: Enables individual kiln-level estimates\nPolicy Applications: Better compliance monitoring\n\n\n\n\n\n\n\n\n\nSplit\nImages (.png)\nLabel Files (.txt)\nBounding Boxes\n\n\n\n\nTrain\n71,856\n47,214\n63,787\n\n\nValidation\n23,952\n15,738\n21,042\n\n\nTest\n18,492\n10,278\n12,819\n\n\nTotal\n114,300\n73,230\n97,648\n\n\n\n\n\n\n\n\nDownload from Kaggle GitHub Repository\n\n\n\nCreative Commons Attribution–NonCommercial 4.0 International License (CC BY-NC 4.0)\n\n\n\nSentinelKilnDB/\n├── images/           # Sentinel-2 imagery tiles\n├── labels/           # Annotation files\n│   ├── yolo_obb/    # YOLO OBB format\n│   ├── yolo_aa/     # YOLO axis-aligned format\n│   └── dota/        # DOTA format  \n├── metadata/         # Dataset statistics\n└── README.md        # Documentation\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nDataset\nResolution\nCoverage\nAnnotations\nPublic\nInstances\nYear\n\n\n\n\nVEDAI\n0.125m\nLocal\nAA boxes\n✅\n3,640\n2016\n\n\nHRSC2016\n0.4-2m\nLocal\nAA boxes\n✅\n2,976\n2016\n\n\nDOTA-V1.0\n0.1-4.5m\nRegional\nOBB + AA\n✅\n188,282\n2018\n\n\nDIOR-R\n0.5-1m\nRegional\nOBB\n✅\n192,518\n2022\n\n\nSentinelKilnDB\n10m\nContinental\nOBB + AA\n✅\n105,933\n2025\n\n\n\n\n\n\n\n\n\n\nResolution: 10 meters per pixel\nFormat: PNG (RGB)\nTypical Kiln Size: ~30 pixels\nCoordinate System: WGS84\nImagery Source: Sentinel-2 Level-2A\n\n\n\n\n\nBounding Box Types: Oriented (OBB) and Axis-Aligned (AA)\nClasses: 3 (CFCBK, FCBK, Zigzag)\nValidation: Manual expert review\nQuality: Near-zero false positives\n\n\n\n\n\nThis dataset enables:\n\nEmission Inventory Updates: More accurate regional estimates\nTechnology Monitoring: Track Zigzag kiln adoption rates\nAir Quality Modeling: Better inputs for chemical transport models\nPolicy Evaluation: Assess effectiveness of environmental regulations\nHealth Impact Studies: Connect kiln locations with health outcomes"
+  },
+  {
+    "objectID": "dataset.html#dataset-overview",
+    "href": "dataset.html#dataset-overview",
+    "title": "Dataset",
+    "section": "",
+    "text": "SentinelKilnDB is a comprehensive dataset for brick kiln detection containing 62,671 manually validated brick kilns across South Asia. The dataset covers 2.8 million km² across India, Bangladesh, Pakistan, and Afghanistan using Sentinel-2 satellite imagery.\n\n\n\nDataset Coverage Map"
+  },
+  {
+    "objectID": "dataset.html#key-statistics",
+    "href": "dataset.html#key-statistics",
+    "title": "Dataset",
+    "section": "",
+    "text": "62,671 Total Kilns\n\n\n2.8M km² Coverage\n\n\n208 Hours Manual Validation\n\n\n10m Sentinel-2 Resolution"
+  },
+  {
+    "objectID": "dataset.html#data-collection-methodology",
+    "href": "dataset.html#data-collection-methodology",
+    "title": "Dataset",
+    "section": "",
+    "text": "Our iterative data collection process consisted of four main phases:\n\n\nStarted with 30,638 brick kilns from our previous work using Planet imagery across five Indian states covering 520K km².\n\n\n\nTrained YOLOv11L-OBB model on initial data and predicted kiln locations across extended regions.\n\n\n\nUsed custom hand-validation interface with ESRI Wayback imagery to verify all predictions.\n\n\n\nHand Validation Interface\n\n\n\n\n\nRepeated training-prediction-validation cycle four times to reach final dataset of 62,671 kilns."
+  },
+  {
+    "objectID": "dataset.html#regional-breakdown",
+    "href": "dataset.html#regional-breakdown",
+    "title": "Dataset",
+    "section": "",
+    "text": "Country\nStates/Regions\nCFCBK\nFCBK\nZigzag\nTotal\nPercentage\n\n\n\n\nIndia\n9 states\n1,939\n21,451\n19,592\n42,982\n68.6%\n\n\nBangladesh\n8 divisions\n2\n1,461\n5,440\n6,903\n11.0%\n\n\nPakistan\n4 provinces\n3\n10,443\n1,731\n12,177\n19.4%\n\n\nAfghanistan\n34 provinces\n0\n608\n1\n609\n1.0%\n\n\nTotal\n-\n1,944\n33,963\n26,764\n62,671\n100%"
+  },
+  {
+    "objectID": "dataset.html#kiln-type-distribution",
+    "href": "dataset.html#kiln-type-distribution",
+    "title": "Dataset",
+    "section": "",
+    "text": "Kiln Density Map\n\n\n\n\n\n\nFixed Chimney Bull’s Trench Kilns\nMost prevalent type (33,963 kilns)\nModerate efficiency\nFound across all countries\n\n\n\n\n\nNatural/Forced Draft Technology\n40% more fuel-efficient than FCBK\n26,764 kilns identified\nHigher adoption in India & Bangladesh\n\n\n\n\n\n\nCircular Fixed Chimney Bull’s Trench Kilns\nOldest design (1,944 kilns)\nHighest fuel consumption\nMostly found in India"
+  },
+  {
+    "objectID": "dataset.html#data-quality-validation",
+    "href": "dataset.html#data-quality-validation",
+    "title": "Dataset",
+    "section": "",
+    "text": "208 hours of expert manual validation\nMultiple imagery sources for verification\nTwo-stage review with expert adjudication\nNear-zero false positives ensured\n\n\n\n\n\nPrimary: Sentinel-2 (10m resolution, free access)\nValidation: Planet Labs, ESRI Wayback, Google Earth Pro\nTemporal: Multi-seasonal data coverage\nQuality Control: Consistent annotation guidelines\n\n\n\n\nOur district-level kiln counts in Uttar Pradesh show r = 0.94 correlation with official 2023 Uttar Pradesh Pollution Control Board survey data (19,671 kilns), confirming dataset completeness."
+  },
+  {
+    "objectID": "dataset.html#annotation-formats",
+    "href": "dataset.html#annotation-formats",
+    "title": "Dataset",
+    "section": "",
+    "text": "The dataset provides annotations in multiple formats for maximum compatibility:\n\n\n\n\n\n\n\n\n\nFormat\nDescription\nUse Case\n\n\n\n\nYOLO OBB\nOriented bounding boxes in YOLO format\nModern OBB detection models\n\n\nYOLO AA\nAxis-aligned bounding boxes in YOLO format\nTraditional object detection\n\n\nDOTA\nAnnotations compatible with DOTA benchmark\nResearch comparisons\n\n\n\n\n\n\n\nPrecise Area Estimation: Accurate kiln footprint calculation\nBetter Spatial Representation: Accounts for kiln orientation\n\nEmission Modeling: Enables individual kiln-level estimates\nPolicy Applications: Better compliance monitoring"
+  },
+  {
+    "objectID": "dataset.html#dataset-splits",
+    "href": "dataset.html#dataset-splits",
+    "title": "Dataset",
+    "section": "",
+    "text": "Split\nImages (.png)\nLabel Files (.txt)\nBounding Boxes\n\n\n\n\nTrain\n71,856\n47,214\n63,787\n\n\nValidation\n23,952\n15,738\n21,042\n\n\nTest\n18,492\n10,278\n12,819\n\n\nTotal\n114,300\n73,230\n97,648"
+  },
+  {
+    "objectID": "dataset.html#access-downloads",
+    "href": "dataset.html#access-downloads",
+    "title": "Dataset",
+    "section": "",
+    "text": "Download from Kaggle GitHub Repository\n\n\n\nCreative Commons Attribution–NonCommercial 4.0 International License (CC BY-NC 4.0)\n\n\n\nSentinelKilnDB/\n├── images/           # Sentinel-2 imagery tiles\n├── labels/           # Annotation files\n│   ├── yolo_obb/    # YOLO OBB format\n│   ├── yolo_aa/     # YOLO axis-aligned format\n│   └── dota/        # DOTA format  \n├── metadata/         # Dataset statistics\n└── README.md        # Documentation"
+  },
+  {
+    "objectID": "dataset.html#comparison-with-existing-datasets",
+    "href": "dataset.html#comparison-with-existing-datasets",
+    "title": "Dataset",
+    "section": "",
+    "text": "Dataset\nResolution\nCoverage\nAnnotations\nPublic\nInstances\nYear\n\n\n\n\nVEDAI\n0.125m\nLocal\nAA boxes\n✅\n3,640\n2016\n\n\nHRSC2016\n0.4-2m\nLocal\nAA boxes\n✅\n2,976\n2016\n\n\nDOTA-V1.0\n0.1-4.5m\nRegional\nOBB + AA\n✅\n188,282\n2018\n\n\nDIOR-R\n0.5-1m\nRegional\nOBB\n✅\n192,518\n2022\n\n\nSentinelKilnDB\n10m\nContinental\nOBB + AA\n✅\n105,933\n2025"
+  },
+  {
+    "objectID": "dataset.html#technical-specifications",
+    "href": "dataset.html#technical-specifications",
+    "title": "Dataset",
+    "section": "",
+    "text": "Resolution: 10 meters per pixel\nFormat: PNG (RGB)\nTypical Kiln Size: ~30 pixels\nCoordinate System: WGS84\nImagery Source: Sentinel-2 Level-2A\n\n\n\n\n\nBounding Box Types: Oriented (OBB) and Axis-Aligned (AA)\nClasses: 3 (CFCBK, FCBK, Zigzag)\nValidation: Manual expert review\nQuality: Near-zero false positives"
+  },
+  {
+    "objectID": "dataset.html#environmental-impact",
+    "href": "dataset.html#environmental-impact",
+    "title": "Dataset",
+    "section": "",
+    "text": "This dataset enables:\n\nEmission Inventory Updates: More accurate regional estimates\nTechnology Monitoring: Track Zigzag kiln adoption rates\nAir Quality Modeling: Better inputs for chemical transport models\nPolicy Evaluation: Assess effectiveness of environmental regulations\nHealth Impact Studies: Connect kiln locations with health outcomes"
+  },
+  {
+    "objectID": "applications.html",
+    "href": "applications.html",
+    "title": "Applications",
+    "section": "",
+    "text": "SentinelKilnDB enables a wide range of applications across environmental science, policy making, and machine learning research. The oriented bounding box annotations provide precise spatial information critical for downstream analysis.\n\n\n\n\n\n\nEmission Inventory Enhancement: OBB annotations enable precise area calculations for emission modeling\nRegional Impact Studies: Aggregate emissions across administrative boundaries\n\nTechnology Assessment: Compare FCBK vs Zigzag efficiency impacts\nHealth Impact Analysis: Connect kiln locations with population health data\n\n\n\n\n\nCarbon Footprint Analysis: Estimate CO₂ emissions from brick production\nBlack Carbon Monitoring: Track soot emissions affecting regional climate\nLand Use Change: Monitor industrial expansion and environmental impact\nSeasonal Dynamics: Study operational patterns across different seasons\n\n\n\n\n\n\n\n\nTechnology Transition Monitoring: Track adoption of cleaner Zigzag kilns\nSpatial Planning: Enforce distance requirements from sensitive areas\nEmission Standards: Monitor compliance with air quality regulations\nEnvironmental Justice: Assess impacts on vulnerable communities\n\n\n\n\n\n\nSDG 3: Good Health and Well-being through improved air quality\nSDG 8.7: End child labor in brick production\nSDG 11: Sustainable cities and communities\nSDG 13: Climate action through emission reduction\n\n\n\n\n\nIncentive Programs: Design targeted support for technology upgrades\nZoning Regulations: Optimize industrial zone planning\nMonitoring Systems: Develop automated compliance tracking\nImpact Assessment: Evaluate policy effectiveness over time\n\n\n\n\n\n\n\n\n\nDomain Adaptation: Study RGB distribution changes across regions\nTransfer Learning: Evaluate model portability across geographic boundaries\nFew-Shot Learning: Handle limited data scenarios for new regions\nMulti-Modal Fusion: Combine optical and radar satellite imagery\n\n\n\n\n\nSmall Object Detection: Advance techniques for ~30 pixel objects\nScale Invariance: Handle varying kiln sizes and orientations\nContext Integration: Leverage surrounding landscape features\nTemporal Consistency: Maintain detection across seasonal changes\n\n\n\n\n\n\nRemote Sensing Pretraining - Large-scale satellite imagery datasets - Self-supervised learning approaches - Multi-spectral data integration\n\n\nMulti-Task Learning - Simultaneous detection and classification - Joint object and scene understanding - Efficiency optimization\n\n\nVision-Language Models - Connect imagery with descriptions - Natural language queries - Automated report generation\n\n\n\n\n\n\n\n\n\nProduction Capacity: Estimate regional brick production volumes\nTechnology Penetration: Analyze modern vs traditional kiln adoption\nEconomic Impact: Assess employment and economic activity patterns\nSupply Chain: Map production networks and distribution channels\n\n\n\n\n\nInfrastructure Development: Plan transportation and logistics networks\nTechnology Upgrade: Target areas for efficiency improvements\nFinancial Inclusion: Support small-scale producers with credit access\nMarket Access: Connect producers with sustainable building markets\n\n\n\n\n\n\n\nChallenge: High pollution levels from traditional brick kilns\nApplication: Used SentinelKilnDB to track Zigzag kiln adoption\nResults: 94% correlation with official survey data, identified 19,910 kilns\nImpact: Informed state-level incentive programs for cleaner technology\n\n\n\nChallenge: Tracking environmental impact of industrial growth\nApplication: Monitor kiln density changes over time\nResults: Documented shift from 150 to 4,247 Zigzag kilns (2009-2017)\nImpact: Supported evidence-based environmental policy\n\n\n\nChallenge: Address air pollution in Punjab province\nApplication: Identify high-density kiln areas for intervention\nResults: Mapped 12,177 kilns across 4 provinces\nImpact: Targeted air quality improvement programs\n\n\n\n\n\n\n# Example workflow for emission estimation\nimport sentinelkilndb as skdb\n\n# Load dataset with OBB annotations\ndataset = skdb.load_dataset()\n\n# Calculate kiln areas from OBB\nareas = dataset.calculate_obb_areas()\n\n# Estimate emissions using area-based factors\nemissions = areas * emission_factors\n\n# Aggregate by administrative boundaries\nregional_emissions = emissions.groupby('district').sum()\n\n\n\n\nREST APIs: Real-time kiln detection services\nBatch Processing: Large-scale monitoring workflows\n\nModel Serving: Deploy trained models at scale\nData Pipelines: Automated processing and validation\n\n\n\n\n\n\n\n\nActive Learning: Reduce annotation costs through smart sampling\nFederated Learning: Train models across distributed datasets\nUncertainty Quantification: Assess model confidence in predictions\nExplainable AI: Understand model decision-making processes\n\n\n\n\n\nGlobal Scaling: Extend methodology to other regions and industries\nReal-Time Monitoring: Develop operational monitoring systems\nPredictive Analytics: Forecast kiln development and emissions\nMulti-Stakeholder Platforms: Connect researchers, policymakers, and industry\n\n\n\n\n\n\n\n\nAcademic Institutions: Joint research projects and student exchanges\nGovernment Agencies: Policy-relevant research and capacity building\nInternational Organizations: Global monitoring and assessment initiatives\nIndustry Partners: Technology transfer and commercialization\n\n\n\n\n\nOpen Science: Promote reproducible research practices\nStandardization: Develop common data formats and protocols\nQuality Assurance: Establish validation and verification procedures\nCapacity Building: Training programs for developing countries\n\n\n\n\n\n\nDownload Dataset GitHub Repository Contact Team\n\nSentinelKilnDB represents a significant step forward in using artificial intelligence for environmental monitoring and sustainable development. Join us in advancing research that creates positive real-world impact."
+  },
+  {
+    "objectID": "applications.html#real-world-impact",
+    "href": "applications.html#real-world-impact",
+    "title": "Applications",
+    "section": "",
+    "text": "SentinelKilnDB enables a wide range of applications across environmental science, policy making, and machine learning research. The oriented bounding box annotations provide precise spatial information critical for downstream analysis."
+  },
+  {
+    "objectID": "applications.html#environmental-monitoring",
+    "href": "applications.html#environmental-monitoring",
+    "title": "Applications",
+    "section": "",
+    "text": "Emission Inventory Enhancement: OBB annotations enable precise area calculations for emission modeling\nRegional Impact Studies: Aggregate emissions across administrative boundaries\n\nTechnology Assessment: Compare FCBK vs Zigzag efficiency impacts\nHealth Impact Analysis: Connect kiln locations with population health data\n\n\n\n\n\nCarbon Footprint Analysis: Estimate CO₂ emissions from brick production\nBlack Carbon Monitoring: Track soot emissions affecting regional climate\nLand Use Change: Monitor industrial expansion and environmental impact\nSeasonal Dynamics: Study operational patterns across different seasons"
+  },
+  {
+    "objectID": "applications.html#policy-applications",
+    "href": "applications.html#policy-applications",
+    "title": "Applications",
+    "section": "",
+    "text": "Technology Transition Monitoring: Track adoption of cleaner Zigzag kilns\nSpatial Planning: Enforce distance requirements from sensitive areas\nEmission Standards: Monitor compliance with air quality regulations\nEnvironmental Justice: Assess impacts on vulnerable communities\n\n\n\n\n\n\nSDG 3: Good Health and Well-being through improved air quality\nSDG 8.7: End child labor in brick production\nSDG 11: Sustainable cities and communities\nSDG 13: Climate action through emission reduction\n\n\n\n\n\nIncentive Programs: Design targeted support for technology upgrades\nZoning Regulations: Optimize industrial zone planning\nMonitoring Systems: Develop automated compliance tracking\nImpact Assessment: Evaluate policy effectiveness over time"
+  },
+  {
+    "objectID": "applications.html#machine-learning-research",
+    "href": "applications.html#machine-learning-research",
+    "title": "Applications",
+    "section": "",
+    "text": "Domain Adaptation: Study RGB distribution changes across regions\nTransfer Learning: Evaluate model portability across geographic boundaries\nFew-Shot Learning: Handle limited data scenarios for new regions\nMulti-Modal Fusion: Combine optical and radar satellite imagery\n\n\n\n\n\nSmall Object Detection: Advance techniques for ~30 pixel objects\nScale Invariance: Handle varying kiln sizes and orientations\nContext Integration: Leverage surrounding landscape features\nTemporal Consistency: Maintain detection across seasonal changes\n\n\n\n\n\n\nRemote Sensing Pretraining - Large-scale satellite imagery datasets - Self-supervised learning approaches - Multi-spectral data integration\n\n\nMulti-Task Learning - Simultaneous detection and classification - Joint object and scene understanding - Efficiency optimization\n\n\nVision-Language Models - Connect imagery with descriptions - Natural language queries - Automated report generation"
+  },
+  {
+    "objectID": "applications.html#economic-analysis",
+    "href": "applications.html#economic-analysis",
+    "title": "Applications",
+    "section": "",
+    "text": "Production Capacity: Estimate regional brick production volumes\nTechnology Penetration: Analyze modern vs traditional kiln adoption\nEconomic Impact: Assess employment and economic activity patterns\nSupply Chain: Map production networks and distribution channels\n\n\n\n\n\nInfrastructure Development: Plan transportation and logistics networks\nTechnology Upgrade: Target areas for efficiency improvements\nFinancial Inclusion: Support small-scale producers with credit access\nMarket Access: Connect producers with sustainable building markets"
+  },
+  {
+    "objectID": "applications.html#case-studies",
+    "href": "applications.html#case-studies",
+    "title": "Applications",
+    "section": "",
+    "text": "Challenge: High pollution levels from traditional brick kilns\nApplication: Used SentinelKilnDB to track Zigzag kiln adoption\nResults: 94% correlation with official survey data, identified 19,910 kilns\nImpact: Informed state-level incentive programs for cleaner technology\n\n\n\nChallenge: Tracking environmental impact of industrial growth\nApplication: Monitor kiln density changes over time\nResults: Documented shift from 150 to 4,247 Zigzag kilns (2009-2017)\nImpact: Supported evidence-based environmental policy\n\n\n\nChallenge: Address air pollution in Punjab province\nApplication: Identify high-density kiln areas for intervention\nResults: Mapped 12,177 kilns across 4 provinces\nImpact: Targeted air quality improvement programs"
+  },
+  {
+    "objectID": "applications.html#technical-implementation",
+    "href": "applications.html#technical-implementation",
+    "title": "Applications",
+    "section": "",
+    "text": "# Example workflow for emission estimation\nimport sentinelkilndb as skdb\n\n# Load dataset with OBB annotations\ndataset = skdb.load_dataset()\n\n# Calculate kiln areas from OBB\nareas = dataset.calculate_obb_areas()\n\n# Estimate emissions using area-based factors\nemissions = areas * emission_factors\n\n# Aggregate by administrative boundaries\nregional_emissions = emissions.groupby('district').sum()\n\n\n\n\nREST APIs: Real-time kiln detection services\nBatch Processing: Large-scale monitoring workflows\n\nModel Serving: Deploy trained models at scale\nData Pipelines: Automated processing and validation"
+  },
+  {
+    "objectID": "applications.html#future-research-directions",
+    "href": "applications.html#future-research-directions",
+    "title": "Applications",
+    "section": "",
+    "text": "Active Learning: Reduce annotation costs through smart sampling\nFederated Learning: Train models across distributed datasets\nUncertainty Quantification: Assess model confidence in predictions\nExplainable AI: Understand model decision-making processes\n\n\n\n\n\nGlobal Scaling: Extend methodology to other regions and industries\nReal-Time Monitoring: Develop operational monitoring systems\nPredictive Analytics: Forecast kiln development and emissions\nMulti-Stakeholder Platforms: Connect researchers, policymakers, and industry"
+  },
+  {
+    "objectID": "applications.html#collaboration-opportunities",
+    "href": "applications.html#collaboration-opportunities",
+    "title": "Applications",
+    "section": "",
+    "text": "Academic Institutions: Joint research projects and student exchanges\nGovernment Agencies: Policy-relevant research and capacity building\nInternational Organizations: Global monitoring and assessment initiatives\nIndustry Partners: Technology transfer and commercialization\n\n\n\n\n\nOpen Science: Promote reproducible research practices\nStandardization: Develop common data formats and protocols\nQuality Assurance: Establish validation and verification procedures\nCapacity Building: Training programs for developing countries"
+  },
+  {
+    "objectID": "applications.html#get-involved",
+    "href": "applications.html#get-involved",
+    "title": "Applications",
+    "section": "",
+    "text": "Download Dataset GitHub Repository Contact Team\n\nSentinelKilnDB represents a significant step forward in using artificial intelligence for environmental monitoring and sustainable development. Join us in advancing research that creates positive real-world impact."
+  }
+]

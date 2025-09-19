@@ -1,0 +1,187 @@
+---
+title: "Applications"
+---
+
+::: {.container}
+
+## Real-World Impact
+
+SentinelKilnDB enables a wide range of applications across environmental science, policy making, and machine learning research. The oriented bounding box annotations provide precise spatial information critical for downstream analysis.
+
+## Environmental Monitoring
+
+### Air Quality Assessment
+- **Emission Inventory Enhancement**: OBB annotations enable precise area calculations for emission modeling
+- **Regional Impact Studies**: Aggregate emissions across administrative boundaries  
+- **Technology Assessment**: Compare FCBK vs Zigzag efficiency impacts
+- **Health Impact Analysis**: Connect kiln locations with population health data
+
+### Climate Research
+- **Carbon Footprint Analysis**: Estimate CO₂ emissions from brick production
+- **Black Carbon Monitoring**: Track soot emissions affecting regional climate
+- **Land Use Change**: Monitor industrial expansion and environmental impact
+- **Seasonal Dynamics**: Study operational patterns across different seasons
+
+## Policy Applications
+
+### Regulatory Compliance
+- **Technology Transition Monitoring**: Track adoption of cleaner Zigzag kilns
+- **Spatial Planning**: Enforce distance requirements from sensitive areas
+- **Emission Standards**: Monitor compliance with air quality regulations
+- **Environmental Justice**: Assess impacts on vulnerable communities
+
+::: {.grid .grid-2}
+::: {.card}
+### Sustainable Development Goals
+- **SDG 3**: Good Health and Well-being through improved air quality
+- **SDG 8.7**: End child labor in brick production 
+- **SDG 11**: Sustainable cities and communities
+- **SDG 13**: Climate action through emission reduction
+:::
+
+::: {.card}
+### Policy Interventions
+- **Incentive Programs**: Design targeted support for technology upgrades
+- **Zoning Regulations**: Optimize industrial zone planning
+- **Monitoring Systems**: Develop automated compliance tracking
+- **Impact Assessment**: Evaluate policy effectiveness over time
+:::
+:::
+
+## Machine Learning Research
+
+### Geospatial Generalization
+- **Domain Adaptation**: Study RGB distribution changes across regions
+- **Transfer Learning**: Evaluate model portability across geographic boundaries
+- **Few-Shot Learning**: Handle limited data scenarios for new regions
+- **Multi-Modal Fusion**: Combine optical and radar satellite imagery
+
+### Low-Resolution Object Detection
+- **Small Object Detection**: Advance techniques for ~30 pixel objects
+- **Scale Invariance**: Handle varying kiln sizes and orientations
+- **Context Integration**: Leverage surrounding landscape features
+- **Temporal Consistency**: Maintain detection across seasonal changes
+
+### Foundation Model Development
+::: {.grid .grid-3}
+::: {.card}
+**Remote Sensing Pretraining**
+- Large-scale satellite imagery datasets
+- Self-supervised learning approaches
+- Multi-spectral data integration
+:::
+
+::: {.card}
+**Multi-Task Learning**
+- Simultaneous detection and classification
+- Joint object and scene understanding
+- Efficiency optimization
+:::
+
+::: {.card}
+**Vision-Language Models**
+- Connect imagery with descriptions
+- Natural language queries
+- Automated report generation
+:::
+:::
+
+## Economic Analysis
+
+### Market Intelligence
+- **Production Capacity**: Estimate regional brick production volumes
+- **Technology Penetration**: Analyze modern vs traditional kiln adoption
+- **Economic Impact**: Assess employment and economic activity patterns
+- **Supply Chain**: Map production networks and distribution channels
+
+### Investment Planning
+- **Infrastructure Development**: Plan transportation and logistics networks
+- **Technology Upgrade**: Target areas for efficiency improvements
+- **Financial Inclusion**: Support small-scale producers with credit access
+- **Market Access**: Connect producers with sustainable building markets
+
+## Case Studies
+
+### India: Uttar Pradesh Technology Transition
+**Challenge**: High pollution levels from traditional brick kilns  
+**Application**: Used SentinelKilnDB to track Zigzag kiln adoption  
+**Results**: 94% correlation with official survey data, identified 19,910 kilns  
+**Impact**: Informed state-level incentive programs for cleaner technology
+
+### Bangladesh: Rapid Industrialization Monitoring
+**Challenge**: Tracking environmental impact of industrial growth  
+**Application**: Monitor kiln density changes over time  
+**Results**: Documented shift from 150 to 4,247 Zigzag kilns (2009-2017)  
+**Impact**: Supported evidence-based environmental policy
+
+### Pakistan: Air Quality Improvement
+**Challenge**: Address air pollution in Punjab province  
+**Application**: Identify high-density kiln areas for intervention  
+**Results**: Mapped 12,177 kilns across 4 provinces  
+**Impact**: Targeted air quality improvement programs
+
+## Technical Implementation
+
+### Data Integration Pipeline
+```python
+# Example workflow for emission estimation
+import sentinelkilndb as skdb
+
+# Load dataset with OBB annotations
+dataset = skdb.load_dataset()
+
+# Calculate kiln areas from OBB
+areas = dataset.calculate_obb_areas()
+
+# Estimate emissions using area-based factors
+emissions = areas * emission_factors
+
+# Aggregate by administrative boundaries
+regional_emissions = emissions.groupby('district').sum()
+```
+
+### API Integration
+- **REST APIs**: Real-time kiln detection services
+- **Batch Processing**: Large-scale monitoring workflows  
+- **Model Serving**: Deploy trained models at scale
+- **Data Pipelines**: Automated processing and validation
+
+## Future Research Directions
+
+### Methodological Advances
+- **Active Learning**: Reduce annotation costs through smart sampling
+- **Federated Learning**: Train models across distributed datasets
+- **Uncertainty Quantification**: Assess model confidence in predictions
+- **Explainable AI**: Understand model decision-making processes
+
+### Application Expansion
+- **Global Scaling**: Extend methodology to other regions and industries
+- **Real-Time Monitoring**: Develop operational monitoring systems
+- **Predictive Analytics**: Forecast kiln development and emissions
+- **Multi-Stakeholder Platforms**: Connect researchers, policymakers, and industry
+
+## Collaboration Opportunities
+
+### Research Partnerships
+- **Academic Institutions**: Joint research projects and student exchanges
+- **Government Agencies**: Policy-relevant research and capacity building
+- **International Organizations**: Global monitoring and assessment initiatives
+- **Industry Partners**: Technology transfer and commercialization
+
+### Data Sharing
+- **Open Science**: Promote reproducible research practices
+- **Standardization**: Develop common data formats and protocols
+- **Quality Assurance**: Establish validation and verification procedures
+- **Capacity Building**: Training programs for developing countries
+
+## Get Involved
+
+::: {.btn-group}
+[Download Dataset](https://kaggle.com/datasets/3eb8e7201b14b158ed841718cb777c5b94a6a6375aaa8499c7376ec831f8d879){.btn}
+[GitHub Repository](https://github.com/rishabh-mondal/NeurIPS_2025){.btn}
+[Contact Team](mailto:nipun.batra@iitgn.ac.in){.btn}
+:::
+
+SentinelKilnDB represents a significant step forward in using artificial intelligence for environmental monitoring and sustainable development. Join us in advancing research that creates positive real-world impact.
+
+:::
