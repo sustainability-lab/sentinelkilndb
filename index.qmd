@@ -18,7 +18,8 @@ A Large-Scale Dataset and Benchmark for OBB Brick Kiln Detection in South Asia U
 :::
 
 ::: {.btn-group}
-[Download Dataset](https://kaggle.com/datasets/3eb8e7201b14b158ed841718cb777c5b94a6a6375aaa8499c7376ec831f8d879){.btn}
+[Paper Pdf](https://openreview.net/pdf?id=efGzsxVSEC){.btn}
+[Download Dataset](https://www.kaggle.com/datasets/rishabhsnip/sentinelkiln-dataset){.btn}
 [View Code](https://github.com/rishabh-mondal/NeurIPS_2025){.btn}
 [Sustainability Lab](https://sustainability-lab.github.io/){.btn}
 :::
@@ -182,11 +183,13 @@ IIT Gandhinagar, [Sustainability Lab](https://sustainability-lab.github.io/)
 ## Citation
 
 ```bibtex
-@article{mondal2025sentinelkilndb,
-  title={SentinelKilnDB: A Large-Scale Dataset and Benchmark for OBB Brick Kiln Detection in South Asia Using Satellite Imagery},
-  author={Mondal, Rishabh and Parab, Jeet and Kubadia, Heer and Dubey, Shataxi and Junagade, Shardul and Patel, Zeel B and Batra, Nipun},
-  journal={Advances in Neural Information Processing Systems},
-  year={2025}
+@inproceedings{
+mondal2025sentinelkilndb,
+title={SentinelKiln{DB}: A Large-Scale Dataset and Benchmark for {OBB} Brick Kiln Detection in South Asia Using Satellite Imagery},
+author={Rishabh Mondal and Jeet Parab and Heer Kubadia and Shataxi Dubey and Shardul Junagade and Zeel B Patel and Nipun Batra},
+booktitle={The Thirty-ninth Annual Conference on Neural Information Processing Systems Datasets and Benchmarks Track},
+year={2025},
+url={https://openreview.net/forum?id=efGzsxVSEC}
 }
 ```
 
