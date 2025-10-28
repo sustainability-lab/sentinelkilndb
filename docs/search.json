@@ -53,7 +53,7 @@
     "href": "index.html",
     "title": "SentinelKilnDB",
     "section": "",
-    "text": "A Large-Scale Dataset and Benchmark for OBB Brick Kiln Detection in South Asia Using Satellite Imagery\n\n\nNeurIPS 2025 Satellite Imagery Object Detection Environmental Monitoring\n\n\nDownload Dataset View Code"
+    "text": "A Large-Scale Dataset and Benchmark for OBB Brick Kiln Detection in South Asia Using Satellite Imagery\n\n\nNeurIPS 2025 Satellite Imagery Object Detection Environmental Monitoring\n\n\nPaper Pdf Download Dataset View Code Sustainability Lab"
   },
   {
     "objectID": "index.html#overview",
@@ -88,14 +88,14 @@
     "href": "index.html#authors",
     "title": "SentinelKilnDB",
     "section": "Authors",
-    "text": "Authors\n\n\n\n\nRishabh Mondal¹\n\n\nIIT Gandhinagar\n\n\n\n\nJeet Parab²\n\n\nIIIT Surat\n\n\n\n\nHeer Kubadia¹\n\n\nIIT Gandhinagar\n\n\n\n\nShataxi Dubey¹\n\n\nIIT Gandhinagar\n\n\n\n\nShardul Junagade¹\n\n\nIIT Gandhinagar\n\n\n\n\nZeel B Patel¹\n\n\nIIT Gandhinagar\n\n\n\n\nNipun Batra¹\n\n\nIIT Gandhinagar"
+    "text": "Authors\n\n\n\n\nRishabh Mondal¹\n\n\nIIT Gandhinagar\n\n\n\n\nJeet Parab²\n\n\nIIIT Surat\n\n\n\n\nHeer Kubadia¹\n\n\nIIT Gandhinagar\n\n\n\n\nShataxi Dubey¹\n\n\nIIT Gandhinagar\n\n\n\n\nShardul Junagade¹\n\n\nIIT Gandhinagar\n\n\n\n\nZeel B Patel¹\n\n\nIIT Gandhinagar\n\n\n\n\nNipun Batra¹\n\n\nIIT Gandhinagar, Sustainability Lab"
   },
   {
     "objectID": "index.html#citation",
     "href": "index.html#citation",
     "title": "SentinelKilnDB",
     "section": "Citation",
-    "text": "Citation\n@article{mondal2025sentinelkilndb,\n  title={SentinelKilnDB: A Large-Scale Dataset and Benchmark for OBB Brick Kiln Detection in South Asia Using Satellite Imagery},\n  author={Mondal, Rishabh and Parab, Jeet and Kubadia, Heer and Dubey, Shataxi and Junagade, Shardul and Patel, Zeel B and Batra, Nipun},\n  journal={Advances in Neural Information Processing Systems},\n  year={2025}\n}"
+    "text": "Citation\n@inproceedings{\nmondal2025sentinelkilndb,\ntitle={SentinelKiln{DB}: A Large-Scale Dataset and Benchmark for {OBB} Brick Kiln Detection in South Asia Using Satellite Imagery},\nauthor={Rishabh Mondal and Jeet Parab and Heer Kubadia and Shataxi Dubey and Shardul Junagade and Zeel B Patel and Nipun Batra},\nbooktitle={The Thirty-ninth Annual Conference on Neural Information Processing Systems Datasets and Benchmarks Track},\nyear={2025},\nurl={https://openreview.net/forum?id=efGzsxVSEC}\n}"
   },
   {
     "objectID": "dataset.html",

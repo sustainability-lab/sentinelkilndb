@@ -26,7 +26,7 @@ Evaluation of detection performance on enhanced-resolution imagery using various
 
 ### In-Region Performance Comparison
 
-![Comparison of class-agnostic mAP 50 for different object detection methods](figures/method_vs_ca_map50.png)
+![Comparison of class-agnostic mAP 50 for different object detection methods](figures/updated_inregion_bench.png)
 
 ### Complete Model Performance (Top 15 Models)
 
@@ -47,7 +47,7 @@ Evaluation of detection performance on enhanced-resolution imagery using various
 
 ### Out-of-Region Generalization
 
-![Cross-region performance showing significant domain shift challenges](figures/model_vs_region_map50.png)
+![Cross-region performance showing significant domain shift challenges](figures/outregion.pngg)
 
 ### Spatial and Temporal Performance Summary
 
