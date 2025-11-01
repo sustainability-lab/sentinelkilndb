@@ -27,7 +27,7 @@ A Large-Scale Dataset and Benchmark for OBB Brick Kiln Detection in South Asia U
 :::
 
 ::: {.stats}
-::: {.stat-grid}
+::: {.stat-grid-2x2}
 ::: {.stat-item}
 [62,671]{.stat-number}
 [Brick Kilns]{.stat-label}
