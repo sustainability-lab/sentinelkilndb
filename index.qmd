@@ -1,5 +1,5 @@
 ---
-title: ""
+title: "SentinelKilnDB"
 format: 
   html:
     page-layout: full
@@ -18,7 +18,7 @@ A Large-Scale Dataset and Benchmark for OBB Brick Kiln Detection in South Asia U
 :::
 
 ::: {.btn-group}
-[Paper Pdf](https://openreview.net/pdf?id=efGzsxVSEC){.btn}
+[Paper PDF](https://openreview.net/pdf?id=efGzsxVSEC){.btn}
 [Download Dataset](https://www.kaggle.com/datasets/rishabhsnip/sentinelkiln-dataset){.btn}
 [View Code](https://github.com/rishabh-mondal/NeurIPS_2025){.btn}
 [Sustainability Lab](https://sustainability-lab.github.io/){.btn}
