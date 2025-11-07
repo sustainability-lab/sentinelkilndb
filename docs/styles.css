@@ -521,3 +521,125 @@ li {
 .table-container {
   position: relative;
 }
+.stat-grid-2x2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 columns by default */
+  gap: 2rem;
+  max-width: 900px;
+  width: 100%;                   /* always fit parent */
+  box-sizing: border-box;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+@media (max-width: 780px) {
+  .stat-grid-2x2 {
+    gap: 1rem;
+    padding: 0 1rem;
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 520px) {
+  .stat-grid-2x2 {
+    grid-template-columns: 1fr;  /* switch to single column stack */
+    gap: 1rem;
+    padding: 0 0.5rem;
+  }
+}
+
+.hero h1, .container h1 {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(275px, 1fr));
+  gap: 2.5rem;
+  margin: 2.5rem 0;
+}
+
+.card {
+  background: var(--color-white);
+  border: 1.5px solid var(--color-gray-200); 
+  border-radius: 18px;
+  padding: 2rem 1.5rem;
+  box-shadow: 0 1px 9px rgba(60,100,180,.06);
+  transition: box-shadow 0.22s, border-color 0.18s, transform 0.14s;
+  min-height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  font-size: 1.08rem;
+  margin-bottom: 0;
+}
+
+@media (max-width: 900px) {
+  .grid-3 {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  .card {
+    padding: 1.2rem 0.8rem;
+  }
+}
+
+.case-study-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  margin: 3rem 0;
+}
+
+.case-study-card {
+  background: var(--color-white, #fff);
+  border-left: 5px solid var(--color-primary, #3b82f6);
+  border-radius: 12px;
+  box-shadow: 0 4px 24px rgba(60,100,180,.09);
+  padding: 1.75rem 2rem 1.25rem 2rem;
+  transition: box-shadow 0.22s, border-color 0.18s;
+  position: relative;
+}
+
+.case-study-card:hover {
+  box-shadow: 0 8px 32px rgba(60,100,180,0.17);
+  border-left: 5px solid var(--color-accent, #06b6d4);
+}
+
+.cs-title {
+  font-size: 1.18rem;
+  font-weight: 700;
+  color: var(--color-primary, #3b82f6);
+  margin-bottom: 1.2rem;
+  letter-spacing: 0.01em;
+}
+
+.case-study-card div {
+  font-size: 1.08rem;
+  margin-bottom: 0.45rem;
+  color: var(--color-gray-800, #334155);
+  line-height: 1.6;
+}
+
+.case-study-card b {
+  color: var(--color-gray-900, #0f172a);
+  font-weight: 700;
+}
+
+@media (max-width: 900px) {
+  .case-study-card {
+    padding: 1.2rem 1rem 1rem 1rem;
+  }
+  .cs-title {
+    font-size: 1.06rem;
+  }
+}
+
+/* Center align Quarto page title at top */
+.title, .page-title, h1.title, h1.page-title {
+  text-align: left;
+  margin-left: auto;
+  margin-right: auto;
+}

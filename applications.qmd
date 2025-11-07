@@ -65,9 +65,11 @@ SentinelKilnDB enables a wide range of applications across environmental science
 - **Temporal Consistency**: Maintain detection across seasonal changes
 
 ### Foundation Model Development
+
 ::: {.grid .grid-3}
 ::: {.card}
 **Remote Sensing Pretraining**
+
 - Large-scale satellite imagery datasets
 - Self-supervised learning approaches
 - Multi-spectral data integration
@@ -75,6 +77,7 @@ SentinelKilnDB enables a wide range of applications across environmental science
 
 ::: {.card}
 **Multi-Task Learning**
+
 - Simultaneous detection and classification
 - Joint object and scene understanding
 - Efficiency optimization
@@ -82,11 +85,14 @@ SentinelKilnDB enables a wide range of applications across environmental science
 
 ::: {.card}
 **Vision-Language Models**
+
 - Connect imagery with descriptions
 - Natural language queries
 - Automated report generation
 :::
 :::
+
+
 
 ## Economic Analysis
 
@@ -102,25 +108,7 @@ SentinelKilnDB enables a wide range of applications across environmental science
 - **Financial Inclusion**: Support small-scale producers with credit access
 - **Market Access**: Connect producers with sustainable building markets
 
-## Case Studies
 
-### India: Uttar Pradesh Technology Transition
-**Challenge**: High pollution levels from traditional brick kilns  
-**Application**: Used SentinelKilnDB to track Zigzag kiln adoption  
-**Results**: 94% correlation with official survey data, identified 19,910 kilns  
-**Impact**: Informed state-level incentive programs for cleaner technology
-
-### Bangladesh: Rapid Industrialization Monitoring
-**Challenge**: Tracking environmental impact of industrial growth  
-**Application**: Monitor kiln density changes over time  
-**Results**: Documented shift from 150 to 4,247 Zigzag kilns (2009-2017)  
-**Impact**: Supported evidence-based environmental policy
-
-### Pakistan: Air Quality Improvement
-**Challenge**: Address air pollution in Punjab province  
-**Application**: Identify high-density kiln areas for intervention  
-**Results**: Mapped 12,177 kilns across 4 provinces  
-**Impact**: Targeted air quality improvement programs
 
 ## Technical Implementation
 
